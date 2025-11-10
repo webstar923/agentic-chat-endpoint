@@ -20,7 +20,7 @@ type Streamer = (event: AgentEvent) => void;
  */
 function needsWebSearch(query: string): boolean {
   const lower = query.toLowerCase();
-  const hasYear = /\b20\d{2}\b/.test(lower); // e.g. 2025
+  const hasYear = /\b20\d{2}\b/.test(lower);
   const temporalKeywords = ["latest", "current", "state of", "trends", "2025"];
   return hasYear || temporalKeywords.some((k) => lower.includes(k));
 }
